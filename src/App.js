@@ -5,7 +5,7 @@ import {
 
 import { useState, useRef } from 'react'
 
-import { ToDoCard } from './components/toDoCard'
+import { ToDoCardList } from './components/toDoCard'
 import { v4 as uuid } from 'uuid'
 
 const App = () => {
@@ -32,17 +32,7 @@ const App = () => {
             </button>
 
             <div>
-                {toDos ? (
-                    toDos.map((toDo) => (
-                        <ToDoCard
-                            key={toDo.id}
-                            name={toDo.name}
-                            date={toDo.date}
-                        />
-                    ))
-                ) : (
-                    <p>No Todos, today</p>
-                )}
+                <ToDoCardList toDos={toDos} />
             </div>
         </div>
     )
